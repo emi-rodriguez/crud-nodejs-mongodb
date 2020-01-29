@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "d450fc8c-d544-4d7e-b288-48dd12d25117",
+		"name": "foo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] api/users/user/:username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/users/user/:username",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users",
+						"user",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "xyz@example.com",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] api/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"first-name\",\n    \"lastName\": \"last-name\",\n    \"username\": \"xyz@example.com\",\n    \"dob\": null,\n    \"address\": \"adress\",\n    \"phone\": \"11 9 9999-9999\",\n    \"role\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/users",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] api/users/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"username\": \"xyz@example.com\"\n    },\n    \"data\": {\n        \"firstName\": \"exampleupdatenew\"\n    },\n    \"options\": {\n        \"new\": true\n   }\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/users/update",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] api/users/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"username\": \"abc@example.com\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/users/delete",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "104dcf83-91c8-4ec3-858a-d9da6746dc79",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "06167a96-4545-49f9-9eca-8d67617ae3a8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
