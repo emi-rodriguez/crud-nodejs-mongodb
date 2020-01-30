@@ -14,7 +14,7 @@ router.post('/', user.create);
 /**
  * TO get the single user by their username eg.email
  */
-router.get('/user/:username', user.find);
+router.get('/:username', user.find);
 
 /**
  * To update user data(fields) by user ID
@@ -24,11 +24,11 @@ router.put('/updatebyid', user.updateById);
 /**
  * To update the user data by filter condition
  */
-router.put('/update', user.update);
+router.put('/', user.update);
 
 /**
  * To delete the user by condition
  */
-router.delete('/delete', user.delete);
+router.delete('/:username', user.delete);
 
 module.exports = router;
