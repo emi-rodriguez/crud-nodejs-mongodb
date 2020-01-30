@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "d450fc8c-d544-4d7e-b288-48dd12d25117",
-		"name": "foo",
+		"_postman_id": "dda4c3d4-5e6a-4cb3-b1f4-575910333925",
+		"name": "crud-nodejs-mongodb",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -20,25 +20,23 @@
 			"response": []
 		},
 		{
-			"name": "[GET] api/users/user/:username",
+			"name": "[GET] api/users/:username",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}api/users/user/:username",
+					"raw": "{{baseUrl}}api/users/:username",
 					"host": [
 						"{{baseUrl}}api"
 					],
 					"path": [
 						"users",
-						"user",
 						":username"
 					],
 					"variable": [
 						{
 							"key": "username",
-							"value": "xyz@example.com",
-							"type": "string"
+							"value": "abc@example.com"
 						}
 					]
 				}
@@ -46,7 +44,7 @@
 			"response": []
 		},
 		{
-			"name": "[POST] api/users",
+			"name": "[POST] api/users/",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -59,7 +57,36 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"first-name\",\n    \"lastName\": \"last-name\",\n    \"username\": \"xyz@example.com\",\n    \"dob\": null,\n    \"address\": \"adress\",\n    \"phone\": \"11 9 9999-9999\",\n    \"role\": \"admin\"\n}"
+					"raw": "{\n    \"firstName\": \"first-name\",\n    \"lastName\": \"last-name\",\n    \"username\": \"owo@example.com\",\n    \"dob\": null,\n    \"address\": \"adress\",\n    \"phone\": \"11 9 9999-9999\",\n    \"role\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}api/users/",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] api/users/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"username\": \"xyz@example.com\"\n    },\n    \"data\": {\n        \"firstName\": \"carry fischer\"\n    },\n    \"options\": {\n        \"new\": false\n   }\n}"
 				},
 				"url": {
 					"raw": "{{baseUrl}}api/users",
@@ -74,36 +101,7 @@
 			"response": []
 		},
 		{
-			"name": "[PUT] api/users/update",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"query\": {\n        \"username\": \"xyz@example.com\"\n    },\n    \"data\": {\n        \"firstName\": \"exampleupdatenew\"\n    },\n    \"options\": {\n        \"new\": true\n   }\n}"
-				},
-				"url": {
-					"raw": "{{baseUrl}}api/users/update",
-					"host": [
-						"{{baseUrl}}api"
-					],
-					"path": [
-						"users",
-						"update"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "[DELETE] api/users/delete",
+			"name": "[DELETE] api/users/",
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -116,16 +114,22 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": {\n        \"username\": \"abc@example.com\"\n    }\n}"
+					"raw": "{\n    \"query\": {\n        \"username\": \"\"\n    }\n}"
 				},
 				"url": {
-					"raw": "{{baseUrl}}api/users/delete",
+					"raw": "{{baseUrl}}api/users/:username",
 					"host": [
 						"{{baseUrl}}api"
 					],
 					"path": [
 						"users",
-						"delete"
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "qwe"
+						}
 					]
 				}
 			},
